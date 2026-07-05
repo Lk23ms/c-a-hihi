@@ -42,6 +42,10 @@ int a = 5, b = 3;
 int max = (a > b) ? a : b;   // nếu a > b thì max = a, ngược lại max = b
 ```
 
+**Giải thích:** đọc theo thứ tự `(điều kiện) ? giá_trị_nếu_đúng : giá_trị_nếu_sai`. Ở đây: "nếu `a > b` đúng thì lấy `a`, còn sai thì lấy `b`" — gói gọn cả một khối `if/else` 4 dòng vào đúng 1 dòng.
+
+**Ví dụ dễ hình dung:** giống câu bạn hay nói với bạn bè: "Nếu trời mưa thì mang áo mưa, không thì mang mũ." Viết theo kiểu ternary sẽ là: `trangBi = (troiMua) ? "ao mua" : "mu";` — vừa gọn vừa đọc vẫn hiểu được ngay.
+
 ## 4. switch-case
 
 Dùng khi so sánh một biến với nhiều giá trị cụ thể (không dùng được cho khoảng giá trị).
@@ -66,6 +70,10 @@ switch (thu) {
 ```
 
 ⚠️ Luôn nhớ `break;` sau mỗi `case`, nếu không chương trình sẽ "rơi xuống" (fall-through) chạy tiếp case bên dưới.
+
+**Giải thích:** `switch` giống như một trạm gác kiểm tra giá trị của `thu`, rồi dẫn bạn thẳng tới đúng nhánh `case` khớp với giá trị đó. `break;` giống như cánh cửa đóng lại ngay sau khi bạn bước vào đúng phòng — nếu quên đóng cửa (quên `break`), bạn sẽ vô tình đi lạc luôn qua các phòng bên cạnh (chạy tiếp các case phía dưới dù chúng không khớp).
+
+**Ví dụ dễ hình dung:** giống như máy bán nước tự động — bạn bấm nút "2" (chọn case 2), máy chỉ nhả đúng lon nước ở ô số 2 rồi dừng lại. Nếu máy bị lỗi "quên khóa" sau khi nhả, nó có thể tiếp tục nhả luôn cả nước ở ô số 3, số 4... — đó chính là lỗi khi quên viết `break;`.
 
 ## 5. Lồng điều kiện (nested if)
 

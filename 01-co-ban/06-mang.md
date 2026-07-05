@@ -19,6 +19,10 @@ cout << b[4] << endl; // 50 (phần tử cuối, vì mảng có 5 phần tử: c
 b[2] = 99; // gán lại giá trị
 ```
 
+**Giải thích:** điều gây bối rối nhất cho người mới học mảng là chỉ số **luôn bắt đầu từ 0** chứ không phải 1. Vậy nên phần tử "thứ nhất" nằm ở `b[0]`, phần tử "thứ năm" (cũng là cuối cùng, vì mảng có 5 phần tử) nằm ở `b[4]`.
+
+**Ví dụ dễ hình dung:** giống dãy phòng trọ được đánh số bắt đầu từ phòng số 0 thay vì số 1 — phòng đầu tiên là "Phòng 0", phòng thứ năm là "Phòng 4". Ban đầu hơi lạ, nhưng quen rồi thì việc tính toán vị trí trở nên dễ dàng hơn nhiều (ví dụ mảng có `n` phần tử thì phần tử cuối luôn ở chỉ số `n - 1`).
+
 ⚠️ **Lỗi cực kỳ phổ biến:** truy cập chỉ số ngoài phạm vi (ví dụ `b[5]` khi mảng chỉ có 5 phần tử, chỉ số hợp lệ 0-4) → gây lỗi khó phát hiện (undefined behavior), C++ **không tự kiểm tra** lỗi này.
 
 ## 2. Duyệt mảng bằng vòng lặp
@@ -119,6 +123,10 @@ int main() {
     inMang(arr, 5); // luôn phải truyền kèm kích thước n
 }
 ```
+
+**Giải thích:** khác với biến số bình thường (khi truyền vào hàm chỉ là "bản sao"), mảng khi truyền vào hàm sẽ luôn cho hàm đó truy cập thẳng vào mảng gốc — giống hệt cách truyền tham chiếu `&` đã học ở bài Hàm. Đó cũng là lý do luôn phải truyền kèm số lượng phần tử `n`: bản thân mảng khi vào hàm "quên mất" mình có bao nhiêu phần tử, nên phải nói cho hàm biết.
+
+**Ví dụ dễ hình dung:** giống như bạn đưa cho bạn mình chìa khóa vào kho đồ (thay vì đưa từng món đồ lẻ) — bạn ấy có thể vào kho lấy/sửa bất kỳ món nào trong đó, vì đó là kho thật chứ không phải bản sao. Nhưng bạn ấy cần biết trước "kho có bao nhiêu ngăn" (số lượng `n`) thì mới biết dừng lại ở đâu khi tìm kiếm.
 
 ## 7. Ví dụ thực tế: Tìm bạn cao điểm nhất lớp
 

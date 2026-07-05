@@ -75,6 +75,8 @@ int main() {
 }
 ```
 
+**Ví dụ dễ hình dung:** Truyền theo giá trị giống như bạn đưa cho bạn mình xem 1 tấm ảnh chụp lại của con thú cưng — bạn ấy có vẽ bậy lên tấm ảnh đó thì con thú cưng thật của bạn vẫn nguyên vẹn. Còn truyền theo tham chiếu giống như bạn đưa thẳng con thú cưng thật cho bạn ấy chăm — nếu bạn ấy tắm rửa/cắt lông cho nó, con thú cưng thật của bạn cũng thay đổi theo luôn, vì đó chính là "bản gốc" chứ không phải bản sao.
+
 > **Khi nào dùng tham chiếu?** Khi cần hàm trả về nhiều giá trị, hoặc khi truyền dữ liệu lớn (mảng, struct) để tránh sao chép tốn bộ nhớ — dùng `const &` nếu chỉ đọc, không sửa.
 
 ## 5. Hàm nạp chồng (overloading)
@@ -94,6 +96,10 @@ int tong(int a, int b, int c) {
     return a + b + c;
 }
 ```
+
+**Giải thích:** cả 3 hàm đều tên là `tong`, nhưng C++ tự phân biệt được nên gọi hàm nào dựa vào **số lượng và kiểu tham số** bạn truyền vào lúc gọi. Gọi `tong(2, 3)` sẽ chạy hàm đầu tiên, gọi `tong(2.5, 3.5)` sẽ chạy hàm thứ hai, gọi `tong(1, 2, 3)` sẽ chạy hàm thứ ba.
+
+**Ví dụ dễ hình dung:** giống như từ "rót" trong đời sống — "rót nước" và "rót trà" nghe tên hành động giống nhau, nhưng tùy vào thứ bạn cầm trên tay (nước hay trà) mà người nghe tự hiểu bạn đang muốn làm gì. Hàm nạp chồng cũng vậy: cùng cái tên `tong`, nhưng "hình dạng" tham số truyền vào sẽ quyết định phiên bản nào được chạy.
 
 ## 6. Tham số mặc định (default parameter)
 

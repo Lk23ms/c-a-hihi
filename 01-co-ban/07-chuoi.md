@@ -44,6 +44,10 @@ string con = s.substr(0, 5);   // "Hello" (bắt đầu từ vị trí 0, lấy 
 string con2 = s.substr(6);     // "World" (từ vị trí 6 đến hết)
 ```
 
+**Giải thích:** `substr(a, b)` nghĩa là "bắt đầu cắt từ vị trí `a`, cắt lấy `b` ký tự". Nếu chỉ ghi `substr(a)` (không có tham số thứ 2) thì mặc định cắt từ vị trí `a` cho tới hết chuỗi.
+
+**Ví dụ dễ hình dung:** giống như bạn có một dải băng dài chữ "Hello World" và dùng kéo cắt lấy một đoạn. `s.substr(0, 5)` là "đặt kéo ở đầu dải băng (vị trí 0), cắt đi 5 ô chữ" → lấy được "Hello". `s.substr(6)` là "đặt kéo ở ô thứ 6, cắt tới hết dải băng luôn" → lấy được "World".
+
 ## 5. Tìm kiếm trong chuỗi: `find`
 
 ```cpp
@@ -53,6 +57,8 @@ if (s.find("xyz") == string::npos) {
     cout << "Khong tim thay" << endl;
 }
 ```
+
+**Giải thích:** `find` giống như bấm Ctrl+F trong Word — nó trả về vị trí (chỉ số) nơi từ cần tìm bắt đầu xuất hiện. Nếu không tìm thấy, nó trả về một giá trị đặc biệt tên `string::npos` (nghĩa là "không có vị trí nào cả"), nên ta hay dùng nó để kiểm tra "có tồn tại hay không" trong chuỗi.
 
 ## 6. Duyệt từng ký tự trong chuỗi
 

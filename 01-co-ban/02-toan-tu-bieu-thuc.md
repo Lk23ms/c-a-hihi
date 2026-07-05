@@ -41,6 +41,14 @@ cout << j++ << endl; // in ra 5, sau đó j = 6
 cout << ++j << endl; // j = 7 trước, rồi in ra 7
 ```
 
+**Giải thích:** đây là chỗ dễ gây rối nhất cho người mới học. Cả `i++` và `++i` cuối cùng đều làm `i` tăng thêm 1, khác nhau ở chỗ: **thời điểm** giá trị đó được "dùng" (ví dụ để in ra hay gán cho biến khác).
+
+**Ví dụ dễ hình dung:** tưởng tượng bạn đang xếp hàng mua vé, số thứ tự hiện tại là 5.
+- `j++` (tăng sau) giống như: nhân viên gọi "Số 5!" (dùng giá trị cũ trước), rồi mới cầm bảng lật sang số 6 cho lượt sau.
+- `++j` (tăng trước) giống như: nhân viên lật bảng số sang 7 trước, rồi mới gọi "Số 7!" (dùng giá trị mới luôn).
+
+Trong phần lớn trường hợp viết vòng lặp đơn giản (`for (int i = 0; i < n; i++)`), dùng `i++` hay `++i` đều cho kết quả giống nhau — sự khác biệt chỉ thật sự quan trọng khi bạn dùng chung trong một biểu thức lớn hơn như ví dụ `cout << j++` ở trên.
+
 ## 4. Toán tử so sánh
 
 | Toán tử | Ý nghĩa |
@@ -90,6 +98,10 @@ Thứ tự ưu tiên giảm dần (rút gọn, các trường hợp hay dùng):
 int ketQua = 2 + 3 * 4;      // 14, không phải 20
 int ketQua2 = (2 + 3) * 4;   // 20, vì ngoặc ưu tiên trước
 ```
+
+**Giải thích:** máy tính luôn làm phép nhân/chia trước, cộng/trừ sau — giống hệt quy tắc toán học bạn học ở trường (nhân chia trước, cộng trừ sau). Muốn bắt máy tính cộng trước, phải "ra lệnh" bằng cách bỏ vào ngoặc `()`.
+
+**Ví dụ dễ hình dung:** giống như khi mẹ nhờ bạn "mua 2 cái bánh, cộng thêm 3 gói kẹo mỗi gói 4 cái" — bạn tự hiểu phải nhân trước (`3 gói x 4 cái = 12 cái kẹo`) rồi mới cộng với 2 cái bánh, ra tổng 14 món. Còn nếu mẹ nói rõ "(2 cái bánh cộng 3 gói kẹo) rồi nhân với 4" thì bạn phải cộng trước, được 5, rồi mới nhân 4 ra 20 — hai cách tính cho ra kết quả hoàn toàn khác nhau, y hệt như ví dụ code ở trên.
 
 ## 7. Ví dụ thực tế: Chia kẹo cho các bạn trong lớp
 

@@ -65,6 +65,10 @@ string ten = "Khoi";
 int a = 1, b = 2, c = 3;
 ```
 
+**Giải thích:** mỗi dòng là một "cái hộp" được đặt tên và gán sẵn giá trị bên trong — hộp `tuoi` chứa số 20, hộp `ten` chứa chữ "Khoi". Khi cần dùng lại giá trị đó, chỉ cần gọi tên hộp (biến) ra là được, không cần gõ lại giá trị.
+
+**Ví dụ dễ hình dung:** biến giống như các ngăn tủ trong nhà, mỗi ngăn có nhãn dán tên riêng. Ngăn `tuoi` bạn dán nhãn "Tuổi" và bỏ vào tờ giấy ghi số 20. Ngăn `ten` dán nhãn "Tên" và bỏ giấy ghi "Khoi". Khi cần biết tuổi, bạn chỉ việc mở đúng ngăn có nhãn "Tuổi" ra xem, không cần nhớ nó nằm ở đâu trong cả căn phòng.
+
 ## 5. Nhập / xuất dữ liệu với cin, cout
 
 ```cpp
@@ -100,6 +104,10 @@ int a = 7, b = 2;
 double ketQua = (double)a / b;   // ép kiểu tường minh -> 3.5
 double sai = a / b;              // 3 (vì int / int = int, mất phần thập phân)
 ```
+
+**Giải thích:** dòng `(double)a` là "ép" biến `a` (vốn là `int`) tạm thời biến thành kiểu `double` trước khi chia. Nhờ vậy phép chia `7.0 / 2` sẽ ra `3.5` đầy đủ, thay vì `int / int` chỉ giữ lại phần nguyên và làm mất phần thập phân (`7 / 2` cho ra `3`, phần `.5` bị "cắt cụt" mất luôn chứ không làm tròn).
+
+**Ví dụ dễ hình dung:** giống như bạn có 7 cái bánh, chia đều cho 2 người. Nếu tính kiểu "int" (chỉ đếm bánh nguyên), mỗi người được 3 cái, còn dư nửa cái bị vứt bỏ không tính. Nhưng nếu tính kiểu "double" (cho phép chia nhỏ bánh ra), mỗi người sẽ được đúng 3.5 cái — công bằng và chính xác hơn.
 
 ## 7. Ví dụ thực tế: Tính tiền mua trà sữa
 

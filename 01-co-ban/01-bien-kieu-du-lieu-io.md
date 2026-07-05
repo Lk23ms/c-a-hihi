@@ -17,7 +17,28 @@ int main() {
 - `cout`: xuất dữ liệu ra màn hình. `cin`: nhập dữ liệu từ bàn phím.
 - `return 0;`: báo chương trình kết thúc thành công.
 
-## 2. Các kiểu dữ liệu cơ bản
+## 2. Bit và Byte là gì?
+
+Trước khi vào bảng kiểu dữ liệu, cần hiểu 2 khái niệm nền tảng này — vì chúng quyết định máy tính lưu trữ và tính toán mọi thứ như thế nào.
+
+**Bit** là đơn vị nhỏ nhất trong máy tính, chỉ có thể mang 1 trong 2 giá trị: `0` hoặc `1` (giống công tắc điện: tắt hoặc bật). Máy tính không hiểu chữ, hiểu số, hay hiểu hình ảnh như con người — nó chỉ hiểu chuỗi các bit 0 và 1 mà thôi.
+
+**Byte** = 8 bit ghép lại với nhau. Đây là đơn vị người ta hay dùng để đo "sức chứa" của dữ liệu, vì 1 bit lẻ quá nhỏ để làm gì hữu ích.
+
+Ví dụ dễ hình dung: 8 bit (1 byte) có thể tạo ra `2^8 = 256` cách kết hợp khác nhau (từ `00000000` đến `11111111`). Đó là lý do kiểu `char` (1 byte) chỉ lưu được 256 giá trị khác nhau — vừa đủ để biểu diễn các ký tự cơ bản như chữ cái, số, và ký hiệu trong bảng mã ASCII.
+
+Các đơn vị lớn hơn mà bạn hay thấy khi mua USB, thẻ nhớ, ổ cứng:
+
+| Đơn vị | Bằng bao nhiêu | Ví dụ thực tế |
+|---|---|---|
+| 1 Byte | 8 bit | 1 ký tự, ví dụ chữ `'A'` |
+| 1 KB (Kilobyte) | ~1,000 byte | 1 trang văn bản ngắn |
+| 1 MB (Megabyte) | ~1,000 KB | 1 bài hát MP3 |
+| 1 GB (Gigabyte) | ~1,000 MB | 1 bộ phim HD |
+
+**Vì sao chuyện này liên quan đến việc khai báo biến?** Vì mỗi kiểu dữ liệu trong C++ chiếm một số byte cố định trong bộ nhớ máy tính, và số byte đó quyết định nó lưu được giá trị lớn tới đâu. Ví dụ `int` chiếm 4 byte = 32 bit, nên nó lưu được khoảng `2^32` giá trị khác nhau (trải từ số âm đến số dương) — đó là lý do `int` có giới hạn khoảng ±2.1 tỷ như bảng dưới đây sẽ cho thấy.
+
+## 3. Các kiểu dữ liệu cơ bản
 
 | Kiểu | Ý nghĩa | Kích thước (thường gặp) | Ví dụ giá trị |
 |---|---|---|---|
@@ -31,7 +52,7 @@ int main() {
 
 > **Lưu ý cho thi HSG:** `int` chỉ chứa được khoảng ±2.1 tỷ. Nếu bài toán có kết quả lớn hơn, luôn dùng `long long` để tránh tràn số (overflow) — lỗi rất hay gặp khi thi.
 
-## 3. Khai báo và gán giá trị biến
+## 4. Khai báo và gán giá trị biến
 
 ```cpp
 int tuoi = 20;
@@ -44,7 +65,7 @@ string ten = "Khoi";
 int a = 1, b = 2, c = 3;
 ```
 
-## 4. Nhập / xuất dữ liệu với cin, cout
+## 5. Nhập / xuất dữ liệu với cin, cout
 
 ```cpp
 #include <iostream>
@@ -72,7 +93,7 @@ cin.ignore(); // bỏ ký tự newline còn sót lại trong buffer
 getline(cin, hoTen);
 ```
 
-## 5. Ép kiểu (type casting)
+## 6. Ép kiểu (type casting)
 
 ```cpp
 int a = 7, b = 2;
@@ -80,7 +101,7 @@ double ketQua = (double)a / b;   // ép kiểu tường minh -> 3.5
 double sai = a / b;              // 3 (vì int / int = int, mất phần thập phân)
 ```
 
-## 6. Ví dụ thực tế: Tính tiền mua trà sữa
+## 7. Ví dụ thực tế: Tính tiền mua trà sữa
 
 Giả sử bạn đi mua trà sữa, cần biết phải trả bao nhiêu tiền và người bán thối lại bao nhiêu:
 

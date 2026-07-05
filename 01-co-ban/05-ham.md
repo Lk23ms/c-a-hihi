@@ -121,7 +121,37 @@ void inDiem() {
 
 ⚠️ Hạn chế dùng biến toàn cục vì dễ gây lỗi khó kiểm soát khi chương trình lớn.
 
-## 8. Ví dụ thực tế: Máy tính đơn giản dùng hàm
+## 8. Ví dụ thực tế: Tính tiền cước xe công nghệ (kiểu Grab)
+
+Các app đặt xe tính tiền dựa trên khoảng cách di chuyển: có mức giá mở cửa cố định, cộng thêm tiền theo từng km tiếp theo. Đóng gói việc tính giá vào 1 hàm giúp code gọn và dễ tái sử dụng:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+double tinhTienXe(double km) {
+    double giaMoCua = 12000;  // giá cho 2km đầu
+    double giaMoiKm = 4000;   // giá mỗi km tiếp theo
+
+    if (km <= 2) {
+        return giaMoCua;
+    }
+    return giaMoCua + (km - 2) * giaMoiKm;
+}
+
+int main() {
+    double quangDuong;
+    cout << "Nhap quang duong (km): ";
+    cin >> quangDuong;
+
+    cout << "Tien cuoc: " << tinhTienXe(quangDuong) << " dong" << endl;
+    return 0;
+}
+```
+
+Đi 1.5km → chỉ tính giá mở cửa 12000. Đi 7km → 12000 + (7-2)*4000 = 32000. Nhờ tách thành hàm `tinhTienXe`, sau này nếu muốn tính cho nhiều chuyến đi khác nhau, chỉ cần gọi lại hàm này nhiều lần, không phải viết lại công thức mỗi lần.
+
+## Ví dụ thực tế 2: Máy tính đơn giản dùng hàm
 
 ```cpp
 #include <iostream>

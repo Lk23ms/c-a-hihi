@@ -85,7 +85,38 @@ if (coVe) {
 }
 ```
 
-## 6. Ví dụ thực tế: Phân loại BMI
+## 6. Ví dụ thực tế: Tính giá vé xem phim theo tuổi
+
+Rạp phim thường có giá vé khác nhau tùy độ tuổi: trẻ em, người lớn, người cao tuổi được giảm giá:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int tuoi;
+    cout << "Nhap tuoi: ";
+    cin >> tuoi;
+
+    int giaVe;
+    if (tuoi < 6) {
+        giaVe = 0; // trẻ dưới 6 tuổi miễn phí
+    } else if (tuoi <= 12) {
+        giaVe = 40000; // trẻ em
+    } else if (tuoi <= 60) {
+        giaVe = 80000; // người lớn
+    } else {
+        giaVe = 50000; // người cao tuổi, giảm giá
+    }
+
+    cout << "Gia ve cua ban: " << giaVe << " dong" << endl;
+    return 0;
+}
+```
+
+Thử với tuổi 10 → 40000 đồng (trẻ em), tuổi 25 → 80000 đồng (người lớn), tuổi 70 → 50000 đồng (giảm giá cao tuổi). Đây chính xác là cách các app đặt vé xem phim tính giá cho bạn mỗi khi chọn ngày sinh.
+
+## Ví dụ thực tế 2: Phân loại BMI
 
 ```cpp
 #include <iostream>

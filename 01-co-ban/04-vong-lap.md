@@ -95,7 +95,41 @@ for (int i = 1; i <= 5; i++) {
 */
 ```
 
-## 6. Ví dụ thực tế: Kiểm tra số nguyên tố
+## 6. Ví dụ thực tế: Để dành tiền mua đôi giày mơ ước
+
+Giả sử mỗi ngày bạn để dành một số tiền cố định, muốn biết cần bao nhiêu ngày để đủ tiền mua đôi giày:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int giaGiay;      // giá đôi giày muốn mua
+    int tietKiemMoiNgay; // số tiền để dành mỗi ngày
+
+    cout << "Gia doi giay: ";
+    cin >> giaGiay;
+    cout << "So tien de danh moi ngay: ";
+    cin >> tietKiemMoiNgay;
+
+    int tongTien = 0;
+    int soNgay = 0;
+
+    while (tongTien < giaGiay) {
+        tongTien += tietKiemMoiNgay;
+        soNgay++;
+    }
+
+    cout << "Can " << soNgay << " ngay de du tien mua giay!" << endl;
+    cout << "Luc do ban se co: " << tongTien << " dong" << endl;
+
+    return 0;
+}
+```
+
+Ví dụ: giày giá 500000, mỗi ngày để dành 30000 → cần 17 ngày (16 ngày mới có 480000, chưa đủ, sang ngày 17 mới đủ 510000). Vòng lặp `while` ở đây lặp đúng cho đến khi điều kiện "chưa đủ tiền" không còn đúng nữa thì dừng lại.
+
+## Ví dụ thực tế 2: Kiểm tra số nguyên tố
 
 ```cpp
 #include <iostream>

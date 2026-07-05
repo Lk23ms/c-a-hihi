@@ -80,7 +80,39 @@ double ketQua = (double)a / b;   // ép kiểu tường minh -> 3.5
 double sai = a / b;              // 3 (vì int / int = int, mất phần thập phân)
 ```
 
-## 6. Ví dụ thực tế: Tính điểm trung bình 3 môn
+## 6. Ví dụ thực tế: Tính tiền mua trà sữa
+
+Giả sử bạn đi mua trà sữa, cần biết phải trả bao nhiêu tiền và người bán thối lại bao nhiêu:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int giaTien;      // giá 1 ly trà sữa, vd 35000 đồng
+    int soLuong;      // mua mấy ly
+    int tienDua;      // số tiền mình đưa cho người bán
+
+    cout << "Gia 1 ly tra sua: ";
+    cin >> giaTien;
+    cout << "So luong ly: ";
+    cin >> soLuong;
+    cout << "So tien dua: ";
+    cin >> tienDua;
+
+    int tongTien = giaTien * soLuong;
+    int tienThoi = tienDua - tongTien;
+
+    cout << "Tong tien phai tra: " << tongTien << " dong" << endl;
+    cout << "Tien duoc thoi lai: " << tienThoi << " dong" << endl;
+
+    return 0;
+}
+```
+
+Chạy thử: giá 35000, mua 3 ly, đưa 150000 → tổng tiền = 105000, được thối lại 45000. Y hệt cách máy tính tiền ở quán trà sữa hoạt động bên trong đó!
+
+## Ví dụ thực tế 2: Tính điểm trung bình 3 môn
 
 ```cpp
 #include <iostream>

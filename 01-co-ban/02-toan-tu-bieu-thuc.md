@@ -91,7 +91,34 @@ int ketQua = 2 + 3 * 4;      // 14, không phải 20
 int ketQua2 = (2 + 3) * 4;   // 20, vì ngoặc ưu tiên trước
 ```
 
-## 7. Ví dụ thực tế: Kiểm tra năm nhuận
+## 7. Ví dụ thực tế: Chia kẹo cho các bạn trong lớp
+
+Bạn có một túi kẹo, muốn chia đều cho các bạn trong lớp, dư ra mấy viên thì mình ăn:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int soKeo, soBan;
+    cout << "So keo: ";
+    cin >> soKeo;
+    cout << "So ban trong lop: ";
+    cin >> soBan;
+
+    int moiNguoiDuoc = soKeo / soBan;  // chia nguyên: mỗi bạn được bấy nhiêu viên
+    int duLai = soKeo % soBan;         // chia lấy dư: số kẹo còn thừa
+
+    cout << "Moi ban duoc: " << moiNguoiDuoc << " vien keo" << endl;
+    cout << "Du lai: " << duLai << " vien (phan nay ban tu an nhe)" << endl;
+
+    return 0;
+}
+```
+
+Ví dụ: có 23 viên kẹo, chia cho 5 bạn → mỗi bạn được 4 viên (`23 / 5 = 4`), dư lại 3 viên (`23 % 5 = 3`). Đây chính là lý do phép `%` (chia lấy dư) hữu ích: nó giúp mình biết chính xác phần "lẻ" còn sót lại sau khi chia đều.
+
+## Ví dụ thực tế 2: Kiểm tra năm nhuận
 
 ```cpp
 #include <iostream>

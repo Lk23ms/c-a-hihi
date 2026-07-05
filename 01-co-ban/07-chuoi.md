@@ -98,7 +98,41 @@ int x = 456;
 string s2 = to_string(x); // int to string -> "456"
 ```
 
-## 9. Ví dụ thực tế: Kiểm tra chuỗi đối xứng (Palindrome)
+## 9. Ví dụ thực tế: Kiểm tra mật khẩu có đủ mạnh không
+
+Khi đăng ký tài khoản, nhiều web yêu cầu mật khẩu phải đủ dài và có cả chữ lẫn số. Đây là cách kiểm tra đơn giản:
+
+```cpp
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string matKhau;
+    cout << "Nhap mat khau: ";
+    cin >> matKhau;
+
+    bool coChu = false, coSo = false;
+
+    for (int i = 0; i < matKhau.length(); i++) {
+        if (isalpha(matKhau[i])) coChu = true; // isalpha: kiểm tra có phải chữ cái
+        if (isdigit(matKhau[i])) coSo = true;  // isdigit: kiểm tra có phải chữ số
+    }
+
+    if (matKhau.length() >= 8 && coChu && coSo) {
+        cout << "Mat khau du manh!" << endl;
+    } else {
+        cout << "Mat khau qua yeu. Can it nhat 8 ky tu, co ca chu va so." << endl;
+    }
+
+    return 0;
+}
+```
+
+Thử với `"abc123"` (6 ký tự) → yếu vì chưa đủ 8 ký tự. Thử với `"khoi2010"` (8 ký tự, có chữ lẫn số) → đủ mạnh. Đây chính xác là logic đơn giản đứng sau ô "mật khẩu yếu/mạnh" mà bạn hay thấy khi đăng ký tài khoản trên các trang web.
+
+## Ví dụ thực tế 2: Kiểm tra chuỗi đối xứng (Palindrome)
 
 ```cpp
 #include <iostream>

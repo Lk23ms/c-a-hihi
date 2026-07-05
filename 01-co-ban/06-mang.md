@@ -120,7 +120,43 @@ int main() {
 }
 ```
 
-## 7. Ví dụ thực tế: Tìm phần tử xuất hiện nhiều nhất
+## 7. Ví dụ thực tế: Tìm bạn cao điểm nhất lớp
+
+Cô giáo muốn biết ai đạt điểm cao nhất lớp trong bài kiểm tra vừa rồi, và điểm trung bình cả lớp là bao nhiêu:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int soHocSinh;
+    cout << "So hoc sinh: ";
+    cin >> soHocSinh;
+
+    double diem[100];
+    double tong = 0;
+    int viTriCaoNhat = 0;
+
+    for (int i = 0; i < soHocSinh; i++) {
+        cout << "Diem hoc sinh " << (i + 1) << ": ";
+        cin >> diem[i];
+        tong += diem[i];
+
+        if (diem[i] > diem[viTriCaoNhat]) {
+            viTriCaoNhat = i;
+        }
+    }
+
+    cout << "Diem trung binh ca lop: " << tong / soHocSinh << endl;
+    cout << "Hoc sinh so " << (viTriCaoNhat + 1) << " co diem cao nhat: " << diem[viTriCaoNhat] << endl;
+
+    return 0;
+}
+```
+
+Đây là bài toán rất thực tế: mảng `diem[]` đóng vai trò như một cuốn sổ điểm, mình duyệt qua từng học sinh (giống cô giáo lật từng trang sổ), vừa cộng dồn tính tổng, vừa so sánh để tìm điểm cao nhất — chỉ cần 1 lượt duyệt mảng là xong.
+
+## Ví dụ thực tế 2: Tìm phần tử xuất hiện nhiều nhất
 
 ```cpp
 #include <iostream>

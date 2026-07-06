@@ -51,7 +51,11 @@ Mỗi bài gồm: lý thuyết ngắn gọn, ví dụ code thực tế, và bài
 
 ## Trạng thái nội dung
 - ✅ Phần 1 — Cơ bản: đầy đủ
-- 🚧 Phần 2, 3, 4: đang được bổ sung dần
+- ✅ Phần 2 — Trung cấp: đầy đủ
+- ✅ Phần 3 — Nâng cao: đầy đủ
+- ✅ Phần 4 — Luyện thi HSG Tin: đầy đủ
+
+🎉 Toàn bộ lộ trình từ Cơ bản đến Luyện thi HSG Tin đã hoàn thành!
 
 ---
 *Tài liệu được soạn và cập nhật liên tục.*
